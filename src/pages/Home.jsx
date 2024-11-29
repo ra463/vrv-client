@@ -71,7 +71,7 @@ const Home = () => {
           </div>
         </div>
         {loading ? (
-          <PulseLoader color="#3273f5" />
+          <PulseLoader size={10} color="#3273f5" />
         ) : (
           <div className="allnotes">
             {notes && notes.length > 0 ? (
