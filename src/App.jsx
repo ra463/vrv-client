@@ -49,7 +49,7 @@ function App() {
         <Routes>
           <Route element={<ProtectedRoute user={user} />}>
             <Route path="/" element={<Home />} />
-            <Route path="/admin/dashboard" element={<Dashboard />} />
+            <Route path="/admin-dashboard" element={<Dashboard />} />
           </Route>
           <Route
             path="/login"

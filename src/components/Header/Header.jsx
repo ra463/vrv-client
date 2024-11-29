@@ -27,8 +27,11 @@ const Header = () => {
         <div className="me">
           <img src={user?.avatar} alt="avatar" />
           {user.role === "admin" &&
-            (location.pathname !== "/admin/dashboard" ? (
-              <button className="active" onClick={() => navigate("/admin/dashboard")}>
+            (location.pathname !== "/admin-dashboard" ? (
+              <button
+                className="active"
+                onClick={() => navigate("/admin-dashboard")}
+              >
                 Dashboard
               </button>
             ) : (
