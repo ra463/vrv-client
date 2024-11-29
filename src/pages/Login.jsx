@@ -94,39 +94,52 @@ const Login = () => {
   ) : (
     <>
       <Header />
-      <div className="login-div">
-        <form className="loginform" onSubmit={loginHandler}>
-          <h2>Login</h2>
-          <input
-            type="email"
-            placeholder="Email"
-            required
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            required
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
+      <div>
+        <h3 className="warn">
+          <span>
+            The Backend is hoisted on{" "}
+            <code style={{ color: "orange" }}>&quot;Render&quot;</code>. So it
+            may take approx 1 - 2 min to load on first api hit.
+          </span>
+        </h3>
+        <div className="login-div">
+          <form className="loginform" onSubmit={loginHandler}>
+            <h2>Login</h2>
+            <input
+              type="email"
+              placeholder="Email"
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              required
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
 
-          <button disabled={loading} type="submit">
-            {loading ? <PulseLoader color="#fff" size={5} /> : "Login"}
-          </button>
-          <Link to="/register" className="signup">
-            Don&apos;t have an account? <span>Signup</span>
-          </Link>
+            <button disabled={loading || googleLoading} type="submit">
+              {loading ? <PulseLoader color="#fff" size={5} /> : "Login"}
+            </button>
+            <Link to="/register" className="signup">
+              Don&apos;t have an account? <span>Signup</span>
+            </Link>
 
-          <button className="google" onClick={googleLogin}>
-            {googleLoading ? (
-              <PulseLoader color="#fff" size={5} />
-            ) : (
-              "Login with Google"
-            )}
-          </button>
-        </form>
+            <button
+              disabled={googleLoading || loading}
+              className="google"
+              onClick={googleLogin}
+            >
+              {googleLoading ? (
+                <PulseLoader color="#fff" size={5} />
+              ) : (
+                "Login with Google"
+              )}
+            </button>
+          </form>
+        </div>
       </div>
     </>
   );

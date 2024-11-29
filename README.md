@@ -1,8 +1,29 @@
-# React + Vite
+# Backend Developer - VRV Security
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> [!NOTE]  
+> The Backend/Server is hoisted on `Render`. So it may take approx 1 - 2 min to load on first api hit.
+> So Please wait when the first requset is done.
 
-Currently, two official plugins are available:
+## Setup Instructions
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Clone the repository - `https://github.com/ra463/vrv-client.git`
+2. Install dependencies using `npm install`.
+3. Create the `.env` in the root of this directory.
+4. Configure environment variables:
+   - `VITE_GOOGLE_CLIENT_ID` [Google OAuth Client ID]
+5. Add the server url (local/deployed) `axiosUtils` file - `/utils/axiosUtils.jsx`.
+6. Start the server using `npm run dev`.
+
+### Client Deployed Link - [https://vrv-client.vercel.app]
+
+## Components
+
+- **FRONTEND**: React.js for the UI.
+- **STATE MANAGEMENT**: Redux is been used for state Management.
+- **Google OAuth** - For Google Login
+
+## To Test Admin
+
+> [!IMPORTANT]  
+> Email - `test@admin.com`
+> Password - `Admin@11`

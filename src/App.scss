@@ -122,6 +122,46 @@ body {
   animation: fadeIn 0.3s ease-in-out;
 }
 
+.warn {
+  display: flex;
+  width: 100%;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  width: 40vw;
+  text-align: center;
+  position: relative;
+
+  span {
+    position: absolute;
+    background: #fbf3e4;
+    top: 1.7rem;
+    padding: 10px;
+    border-radius: 5px;
+    color: red;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .warn {
+    width: 60vw;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .warn {
+    width: 90vw;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .warn {
+    span{
+      top: 1rem;
+    }
+  }
+}
+
 @keyframes fadeIn {
   0% {
     opacity: 0;

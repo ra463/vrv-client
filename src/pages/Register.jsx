@@ -65,7 +65,7 @@ const Register = () => {
 
         if (data.success) {
           toast.success(data.message);
-          
+
           setGoogleLoading(false);
 
           dispatch(
@@ -124,7 +124,7 @@ const Register = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
 
-          <button disabled={loading} type="submit">
+          <button disabled={loading || googleLoading} type="submit">
             {loading ? <PulseLoader color="#fff" size={5} /> : "Signup"}
           </button>
 
@@ -132,7 +132,11 @@ const Register = () => {
             Already have an account? <span>Login</span>
           </Link>
 
-          <button className="google" onClick={googleLogin}>
+          <button
+            disabled={googleLoading || loading}
+            className="google"
+            onClick={googleLogin}
+          >
             {googleLoading ? (
               <PulseLoader color="#fff" size={5} />
             ) : (
