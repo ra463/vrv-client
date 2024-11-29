@@ -30,10 +30,10 @@ const Dashboard = () => {
     }
   }, [selected, debouncedSearchNote, debouncedSearchUser]);
 
-  if (!token || user?.role !== "admin") {
-    toast.error("You must be an admin to access the dashboard!");
-    return <Navigate to="/login" />;
-  }
+  // if (!token || user?.role !== "admin") {
+  //   toast.error("You must be an admin to access the dashboard!");
+  //   return <Navigate to="/login" />;
+  // }
 
   return (
     <>
