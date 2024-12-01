@@ -11,6 +11,7 @@ import { toast } from "sonner";
 import axiosInstance from "../utils/axiosUtils";
 import UpdateNote from "../components/layout/UpdateNote";
 import ViewNote from "../components/layout/ViewNote";
+import { useDebounce } from "../utils/useDebounce";
 
 const Home = () => {
   const { token } = useSelector((state) => state.user);
@@ -22,6 +23,8 @@ const Home = () => {
   const [showNote, setShowNote] = useState(false);
   const [loading, setLoading] = useState(false);
   const [deleteLoading, setDeleteLoading] = useState(false);
+
+  const debouncedSearchUser = useDebounce(search, 800);
 
   const [showUpdateNote, setShowUpdateNote] = useState(false);
   const [showViewNote, setShowViewNote] = useState(false);
@@ -50,12 +53,11 @@ const Home = () => {
 
   useEffect(() => {
     getAllNotes(dispatch, setLoading, search, token);
-  }, [search]);
+  }, [debouncedSearchUser]);
 
   return token ? (
     <>
       <Header />
-
       <div className="home">
         <div className="head">
           <button onClick={() => setShowNote(true)}>Add New Note</button>
