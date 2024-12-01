@@ -11,7 +11,7 @@ const NotFound = () => {
         Oops! The page you&apos;re looking for doesn&apos;t exist.
       </p>
       <Link
-        to={`/${user?.role === "admin" ? "admin/dashboard" : ""}`}
+        to={`/${user?.role === "admin" ? "admin-dashboard" : ""}`}
         className="not-found__link"
       >
         {user?.role === "admin" ? "Go to Dashboard" : "Go to Home"}
